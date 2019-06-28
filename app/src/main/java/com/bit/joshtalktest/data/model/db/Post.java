@@ -1,5 +1,7 @@
 package com.bit.joshtalktest.data.model.db;
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
 
 import com.bit.joshtalktest.data.local.database.AppDatabase.DateConverter;
@@ -22,18 +24,32 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @TypeConverters(DateConverter.class)
 public final class Post {
 
+    @PrimaryKey
+    @ColumnInfo
     @JsonProperty("id")
     private String id;
+
+    @ColumnInfo
     @JsonProperty("thumbnail_image")
     private String thumbnailImage;
+
+    @ColumnInfo
     @JsonProperty("event_name")
     private String eventName;
+
+    @ColumnInfo
     @JsonProperty("event_date")
     private Integer eventDate;
+
+    @ColumnInfo
     @JsonProperty("views")
     private Integer views;
+
+    @ColumnInfo
     @JsonProperty("likes")
     private Integer likes;
+
+    @ColumnInfo
     @JsonProperty("shares")
     private Integer shares;
 
