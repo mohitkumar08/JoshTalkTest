@@ -3,4 +3,20 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="feedBg">#F5F6F7</color>
+
+
+
+
+    <color name="colorErrorBg">#E85959</color>
+    <color name="colorErrorText">#FFFFFF</color>
+    <color name="colorErrorBtnBg">#4A4A4A</color>
+
+    <color name="colorCurrentCityText">#556799</color>
+    <color name="colorCurrentCityTempText">#2A2A2A</color>
+
+
+    <color name="dark_grey">#e4e8ee</color>
+    <color name="grey_light_border">#dbdbdb</color>
 </resources>

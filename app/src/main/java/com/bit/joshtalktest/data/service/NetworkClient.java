@@ -14,6 +14,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class NetworkClient {
+
     private static final int TIME_OUT = 30;
 
     public OkHttpClient.Builder getOkHttpBuilder() {
