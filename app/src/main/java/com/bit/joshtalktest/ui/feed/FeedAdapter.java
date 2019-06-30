@@ -34,11 +34,18 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final FeedViewHolder viewHolder, final int position) {
+
+        viewHolder.event.setText(EMPTY);
+        viewHolder.share.setText(EMPTY);
+        viewHolder.like.setText(EMPTY);
+        viewHolder.viewEvent.setText(EMPTY);
+        viewHolder.time.setText(EMPTY);
+
         Post post = postList.get(position);
         viewHolder.event.setText(post.getEventName());
         viewHolder.share.setText(post.getShares() > 0 ? post.getShares().toString() : EMPTY);
         viewHolder.like.setText(post.getLikes() > 0 ? post.getLikes().toString() : EMPTY);
-        viewHolder.viewEvent.setText(viewHolder.itemView.getContext().getString(R.string.view, post.getViews() > 0 ? post.getLikes().toString() : EMPTY));
+        viewHolder.viewEvent.setText(viewHolder.itemView.getContext().getString(R.string.view, post.getViews() > 0 ? post.getViews().toString() : EMPTY));
         viewHolder.time.setText(post.getEventTime());
 
         Picasso.get().load(post.getThumbnailImage()).placeholder(R.drawable.image_placeholder).into(viewHolder.feedImageView);
@@ -48,7 +55,12 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder> {
     public void addPost(List<Post> post) {
         int lastPos = postList.size();
         postList.addAll(post);
-        //notifyItemRangeInserted(lastPos, post.size());
+        notifyItemRangeInserted(lastPos, post.size());
+        //notifyDataSetChanged();
+    }
+    public void update(List<Post> post) {
+        postList.clear();
+        postList.addAll(post);
         notifyDataSetChanged();
     }
 
@@ -59,6 +71,10 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder> {
             return 0;
         }
         return postList.size();
+    }
+
+    public List<Post> getPostList() {
+        return postList;
     }
 
     protected static class FeedViewHolder extends ViewHolder {

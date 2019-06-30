@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">JoshTalkTest</string>
     <string name="view">Views %s</string>
-
+    <string name="dialog_title">Select type of sort</string>
 </resources>

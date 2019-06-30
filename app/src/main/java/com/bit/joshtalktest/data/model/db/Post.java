@@ -205,7 +205,7 @@ public final class Post {
         return result;
     }
 
-    static class DateCompare implements Comparator<Post> {
+   public static class DateCompare implements Comparator<Post> {
         DateFormat f = new SimpleDateFormat(Constants.FEED_TIME_FORMAT);
 
         @Override
@@ -219,14 +219,14 @@ public final class Post {
         }
     }
 
-    static class LikesCompare implements Comparator<Post> {
+    public static class LikesCompare implements Comparator<Post> {
         @Override
         public int compare(final Post o1, final Post o2) {
             return o1.getLikes().compareTo(o2.getLikes());
         }
     }
 
-    static class ViewsCompare implements Comparator<Post> {
+   public static class ViewsCompare implements Comparator<Post> {
 
         @Override
         public int compare(final Post o1, final Post o2) {
@@ -234,7 +234,7 @@ public final class Post {
         }
     }
 
-    static class ShareCompare implements Comparator<Post> {
+    public static class ShareCompare implements Comparator<Post> {
 
         @Override
         public int compare(final Post o1, final Post o2) {
